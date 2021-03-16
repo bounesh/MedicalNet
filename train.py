@@ -4,7 +4,7 @@ Written by Whalechen
 '''
 
 from setting import parse_opts 
-from datasets.brains18 import BrainS18Dataset 
+from brains18 import BrainS18Dataset 
 from model import generate_model
 import torch
 import numpy as np
@@ -13,7 +13,7 @@ from torch import optim
 from torch.optim import lr_scheduler
 from torch.utils.data import DataLoader
 import time
-from utils.logger import log
+from logger import log
 from scipy import ndimage
 import os
 

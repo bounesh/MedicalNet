@@ -127,3 +127,4 @@ data/**/*.nii.gz
 data/**/*.txt
 pretrain/**/*.pth
 trails/**/*.pth
+toy_data/*
