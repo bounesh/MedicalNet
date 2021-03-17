@@ -4,7 +4,8 @@ Written by Whalechen
 '''
 
 from setting import parse_opts 
-from brains18 import BrainS18Dataset 
+# from brains18 import BrainS18Dataset
+from uterusseg import UterusSeg
 from model import generate_model
 import torch
 import numpy as np
@@ -13,7 +14,7 @@ from torch import optim
 from torch.optim import lr_scheduler
 from torch.utils.data import DataLoader
 import time
-from logger import log
+# from logger import log
 from scipy import ndimage
 import os
 
@@ -144,7 +145,7 @@ if __name__ == '__main__':
         sets.pin_memory = False
     else:
         sets.pin_memory = True    
-    training_dataset = BrainS18Dataset(sets.data_root, sets.img_list, sets)
+    training_dataset = UterusSeg(sets.data_root, sets.img_list, sets)
     data_loader = DataLoader(training_dataset, batch_size=sets.batch_size, shuffle=True, num_workers=sets.num_workers, pin_memory=sets.pin_memory)
 
     # training

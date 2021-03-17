@@ -1,5 +1,6 @@
 from setting import parse_opts 
-from brains18 import BrainS18Dataset
+# from brains18 import BrainS18Dataset
+from uterusseg import UterusSeg
 from model import generate_model
 import torch
 import numpy as np
@@ -84,7 +85,7 @@ if __name__ == '__main__':
     net.load_state_dict(checkpoint['state_dict'])
 
     # data tensor
-    testing_data =BrainS18Dataset(sets.data_root, sets.img_list, sets)
+    testing_data = UterusSeg(sets.data_root, sets.img_list, sets)
     data_loader = DataLoader(testing_data, batch_size=1, shuffle=False, num_workers=1, pin_memory=False)
 
     # testing
