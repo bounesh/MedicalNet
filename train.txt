@@ -1,0 +1,8 @@
+../Data/Volumes/01.nii.gz ../Data/Segmentations/01.nii.gz
+../Data/Volumes/04.nii.gz ../Data/Segmentations/04.nii.gz
+../Data/Volumes/05.nii.gz ../Data/Segmentations/05.nii.gz
+../Data/Volumes/16-1.nii.gz ../Data/Segmentations/16-1.nii.gz
+../Data/Volumes/16-4.nii.gz ../Data/Segmentations/16-4.nii.gz
+../Data/Volumes/16-6.nii.gz ../Data/Segmentations/16-6.nii.gz
+../Data/Volumes/16-7.nii.gz ../Data/Segmentations/16-7.nii.gz
+../Data/Volumes/16-8.nii.gz ../Data/Segmentations/16-8.nii.gz
