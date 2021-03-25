@@ -99,9 +99,11 @@ if __name__ == '__main__':
     for idx in range(Nimg):
         label = nib.load(os.path.join(sets.data_root, label_names[idx]))
         label = label.get_data()
+        vis_data = nib.Nifti1Image(np.array(label).astype(np.float32), np.eye(4))
+        nib.save(vis_data, 'results/{}.nii.gz'.format(label_names[idx]))
         dices[idx, :] = seg_eval(masks[idx], label, range(sets.n_seg_classes))
     
     # print result
     for idx in range(1, sets.n_seg_classes):
         mean_dice_per_task = np.mean(dices[:, idx])
-        print('mean dice for class-{} is {}'.format(idx, mean_dice_per_task))   
+        print('mean dice for class-{} is {}'.format(idx, mean_dice_per_task))
