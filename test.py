@@ -102,7 +102,7 @@ if __name__ == '__main__':
     for idx in range(Nimg):
         label = nib.load(os.path.join(sets.data_root, label_names[idx]))
         label = label.get_data()
-        vis_data = nib.Nifti1Image(np.array(label).astype(np.float32), np.eye(4))
+        vis_data = nib.Nifti1Image(np.array(masks[idx]).astype(np.float32),None)
         nib.save(vis_data, 'results/{}'.format(names[idx]))
         dices[idx, :] = seg_eval(masks[idx], label, range(sets.n_seg_classes))
     
