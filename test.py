@@ -90,8 +90,11 @@ if __name__ == '__main__':
 
     # testing
     img_names = [info.split(" ")[0] for info in load_lines(sets.img_list)]
+    names = [n.split('/')[3] for n in img_names]
     masks = test(data_loader, net, img_names, sets)
     
+
+
     # evaluation: calculate dice 
     label_names = [info.split(" ")[1] for info in load_lines(sets.img_list)]
     Nimg = len(label_names)
@@ -100,7 +103,7 @@ if __name__ == '__main__':
         label = nib.load(os.path.join(sets.data_root, label_names[idx]))
         label = label.get_data()
         vis_data = nib.Nifti1Image(np.array(label).astype(np.float32), np.eye(4))
-        nib.save(vis_data, 'results/{}.nii.gz'.format(label_names[idx]))
+        nib.save(vis_data, 'results/{}'.format(names[idx]))
         dices[idx, :] = seg_eval(masks[idx], label, range(sets.n_seg_classes))
     
     # print result

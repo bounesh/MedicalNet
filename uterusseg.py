@@ -39,8 +39,8 @@ class UterusSeg(Dataset):
         if self.phase == "train":
             # read image and labels
             ith_info = self.img_list[idx].split(" ")
-            img_name = os.path.join(self.root_dir, ith_info[0])
-            label_name = os.path.join(self.root_dir, ith_info[1])
+            img_name = os.path.join(ith_info[0])
+            label_name = os.path.join(ith_info[1])
             assert os.path.isfile(img_name)
             assert os.path.isfile(label_name)
             img = nibabel.load(img_name)  # We have transposed the data from WHD format to DHW
@@ -61,7 +61,7 @@ class UterusSeg(Dataset):
         elif self.phase == "test":
             # read image
             ith_info = self.img_list[idx].split(" ")
-            img_name = os.path.join(self.root_dir, ith_info[0])
+            img_name = os.path.join(ith_info[0])
             print(img_name)
             assert os.path.isfile(img_name)
             img = nibabel.load(img_name)

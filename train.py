@@ -14,7 +14,7 @@ from torch import optim
 from torch.optim import lr_scheduler
 from torch.utils.data import DataLoader
 import time
-# from logger import log
+from logger import log
 from scipy import ndimage
 import os
 
