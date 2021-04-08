@@ -1,3 +1,4 @@
 ../Data/Volumes/16-2.nii.gz ../Data/Segmentations/16-2.nii.gz
+../Data/Volumes/16-4.nii.gz ../Data/Segmentations/16-5.nii.gz
 ../Data/Volumes/16-5.nii.gz ../Data/Segmentations/16-5.nii.gz
-../Data/Volumes/03.nii.gz ../Data/Segmentations/03.nii.gz
+../Data/Volumes/16-8.nii.gz ../Data/Segmentations/16-5.nii.gz
